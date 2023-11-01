@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { HOST, IData } from "./common";
+import { HOST, IData, WS_SPACES_URL } from "./common";
 
 function FeedItem({data}: {data: IData}) {
   return (
@@ -24,7 +24,7 @@ export default function LiveFeed({
   const [feed, setFeed] = useState<IData[] | null>(null);
 
   useEffect(() => {
-    const ws = new WebSocket(`ws://${HOST}/ws/spaces`);
+    const ws = new WebSocket(WS_SPACES_URL);
 
     ws.onmessage = (e) => {
       const data = JSON.parse(e.data);
