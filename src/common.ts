@@ -5,4 +5,7 @@ export const WS_SPACES_URL = `ws${SSL ? "s" : ""}://${HOST}/ws/spaces`;
 
 export interface IData {
     id: string;
+    title?: string;
+    creator?: string;
+    url?: string;
   }
