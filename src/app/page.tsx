@@ -76,6 +76,7 @@ export default function Home() {
           <h4 style={{margin:0}}>Detail</h4>
           <p>Detail for {detailId.current}</p>
           {detail && <pre>{JSON.stringify(detail, null, 2)}</pre>}
+          {detail && detail.url && <audio controls src={detail.url} style={{width: "100%"}}/>}
         </div>
       </div>
 
